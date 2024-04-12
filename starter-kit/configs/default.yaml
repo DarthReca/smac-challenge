@@ -1,0 +1,5 @@
+defaults:
+  - _self_
+  - dataset: earthquake
+  - model: segformer
+  - trainer: default
