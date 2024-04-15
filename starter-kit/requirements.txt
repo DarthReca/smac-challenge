@@ -1,0 +1,5 @@
+git+https://github.com/isaaccorley/torchgeo.git@datasets/quakeset
+pytorch-lightning
+torchmetrics
+transformers
+hydra-core
