@@ -1,12 +1,12 @@
 import time
 
 import hydra
-import pytorch_lightning as pl
+import lightning as pl
 import torch
-from dataset import EarthQuakeDataModule
+from lightning.pytorch.callbacks import LearningRateMonitor, ModelCheckpoint
 from model import EarthQuakeModel
 from omegaconf import DictConfig
-from pytorch_lightning.callbacks import LearningRateMonitor, ModelCheckpoint
+from torchgeo.datamodules import QuakeSetDataModule
 
 
 @hydra.main(config_path="configs", config_name="default", version_base=None)
@@ -14,7 +14,7 @@ def main(args: DictConfig):
     pl.seed_everything(42)
     torch.set_float32_matmul_precision("medium")
 
-    data_module = EarthQuakeDataModule(**args.dataset)
+    data_module = QuakeSetDataModule(**args.dataset)
     model = EarthQuakeModel(**args.model)
 
     experiment_id = time.strftime("%Y%m%d-%H%M%S")

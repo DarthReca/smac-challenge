@@ -1,4 +1,4 @@
-import pytorch_lightning as pl
+import lightning as pl
 import torch
 from torch import nn
 from torchmetrics import Accuracy, MeanAbsoluteError
@@ -48,7 +48,7 @@ class EarthQuakeModel(pl.LightningModule):
         }
 
     def training_step(self, batch, batch_idx):
-        sample, label, mag = (batch["sample"], batch["label"], batch["magnitude"])
+        sample, label, mag = (batch["image"], batch["label"], batch["magnitude"])
 
         sample = self.train_transform(sample)
         y_r = self(sample)
@@ -59,7 +59,7 @@ class EarthQuakeModel(pl.LightningModule):
         return loss
 
     def validation_step(self, batch, batch_idx):
-        sample, label, mag = (batch["sample"], batch["label"], batch["magnitude"])
+        sample, label, mag = (batch["image"], batch["label"], batch["magnitude"])
 
         y_r = self(sample)
 
@@ -73,7 +73,7 @@ class EarthQuakeModel(pl.LightningModule):
         self.log("val_loss", loss)
 
     def test_step(self, batch, batch_idx):
-        sample, label, mag = (batch["sample"], batch["label"], batch["magnitude"])
+        sample, label, mag = (batch["image"], batch["label"], batch["magnitude"])
 
         y_r = self(sample)
 
@@ -83,6 +83,6 @@ class EarthQuakeModel(pl.LightningModule):
         self.log(f"val_{self.regr_metric.__class__.__name__}", self.regr_metric)
 
     def predict_step(self, batch, batch_idx, dataloader_idx=None):
-        sample = batch["sample"]
+        sample = batch["image"]
         y_r = self(sample)
         return y_r
