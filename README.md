@@ -14,3 +14,5 @@ The file *submission.csv* contains a sample submission with the following column
 In the *starter-kit* folder, you can find the code to run the baseline using *main.py*.
 
 *requirements.txt* contains the libraries required to run the code.
+
+You can run inference thanks to *inference.py* simply passing your saved checkpoint with *--checkpoint {checkpoint}* to the command line
