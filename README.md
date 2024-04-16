@@ -8,3 +8,9 @@ The file *submission.csv* contains a sample submission with the following column
 - magnitude: predicted magnitude (should be in the range 0-10)
 - affected: binary label (0-1)
 - flops: resource consumption expressed in FLOPs by PAPI
+
+## Starter Kit
+
+In the *starter-kit* folder, you can find the code to run the baseline using *main.py*.
+
+*requirements.txt* contains the library required to run the code.
