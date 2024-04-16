@@ -23,7 +23,7 @@ def main(checkpoint: str):
         predictions += [
             {"key": key, "magnitude": prediction, "affected": int(prediction > 1)}
         ]
-    pd.DataFrame(predictions).to_csv("predictions.csv", index=False)
+    pd.DataFrame(predictions).to_csv("submission.csv", index=False)
 
 
 if __name__ == "__main__":
