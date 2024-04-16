@@ -13,4 +13,4 @@ The file *submission.csv* contains a sample submission with the following column
 
 In the *starter-kit* folder, you can find the code to run the baseline using *main.py*.
 
-*requirements.txt* contains the library required to run the code.
+*requirements.txt* contains the libraries required to run the code.
