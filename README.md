@@ -1,6 +1,6 @@
 # SMAC
 
-Please use the *Forum* in CodaBench during the competition to report issues.
+Please report issues to the *Forum* in CodaBench during the competition.
 
 ## Dataset
 
@@ -20,10 +20,12 @@ The file *submission.csv* contains a sample submission with the following column
 - affected: binary label (0-1)
 - flops: resource consumption expressed in FLOPs by PAPI
 
+You can use *submission_creator.py* with arguments *--predictions {prediction_csv_file}* and *--flops {estimated_flops}* to "compile" a *submission.csv* with FLOPs and your predictions. This file also does some basic checks on your submission.
+
 ## Starter Kit
 
 In the *starter-kit* folder, you can find the code to run the baseline using *main.py*.
 
 *requirements.txt* contains the libraries required to run the code.
 
-You can run inference thanks to *inference.py* simply passing your saved checkpoint with *--checkpoint {checkpoint}* to the command line
+You can run inference thanks to *inference.py* simply passing your saved checkpoint with *--checkpoint {checkpoint}* to the command line.
