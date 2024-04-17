@@ -1,5 +1,16 @@
 # SMAC
 
+Please use the *Forum* in CodaBench during the competition to report issues.
+
+## Dataset
+
+The dataset comprises Sentinel-1 SAR imagery with two multispectral bands (VV/VH). We provide two classification labels (unaffected / affected by earthquake) and a real value representing the earthquake magnitudes for each sample.
+
+Each sample is composed of:
+- image with four channels. It contains VV and VH channels for two images at times t0 and t1 (where t0 < t1)
+- label contains a binary value (0 for unaffected and 1 for affected area)
+- magnitude contains a real value in the range 0-10, representing the magnitude in mb
+
 ## Submission
 
 The file *submission.csv* contains a sample submission with the following columns:
