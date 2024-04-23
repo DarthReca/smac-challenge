@@ -1,4 +1,4 @@
-git+https://github.com/isaaccorley/torchgeo.git@datasets/quakeset
+git+https://github.com/microsoft/torchgeo.git
 pytorch-lightning
 torchmetrics
 transformers
