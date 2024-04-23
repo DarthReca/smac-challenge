@@ -11,6 +11,8 @@ Each sample is composed of:
 - label contains a binary value (0 for unaffected and 1 for affected area)
 - magnitude contains a real value in the range 0-10, representing the magnitude in mb
 
+**NOTE**: The dataset is implemented in TorchGeo (see *main.py* in the starter-kit)
+
 ## Submission
 
 The file *submission.csv* contains a sample submission with the following columns:
