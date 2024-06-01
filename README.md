@@ -31,3 +31,7 @@ In the *starter-kit* folder, you can find the code to run the baseline using *ma
 *requirements.txt* contains the libraries required to run the code.
 
 You can run inference thanks to *inference.py* simply passing your saved checkpoint with *--checkpoint {checkpoint}* to the command line.
+
+## Private Set
+
+You can find the private test set on [HuggingFace](https://huggingface.co/datasets/DarthReca/quakeset/blob/main/p_earthquakes.h5). It is compatible with *QuakeSet* class of *TorchGeo* and you can load it in this way: ```QuakeSet(root="private_set", split="test")```.
