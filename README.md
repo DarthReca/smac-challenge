@@ -34,4 +34,14 @@ You can run inference thanks to *inference.py* simply passing your saved checkpo
 
 ## Private Set
 
-You can find the private test set on [HuggingFace](https://huggingface.co/datasets/DarthReca/quakeset/blob/main/p_earthquakes.h5). It is compatible with *QuakeSet* class of *TorchGeo* and you can load it in this way: ```QuakeSet(root="private_set", split="test")```.
+You can find the private test set on [HuggingFace](https://huggingface.co/datasets/DarthReca/quakeset/blob/main/p_earthquakes.h5). It is compatible with *QuakeSet* class of *TorchGeo* and you can load it in this way: ```ds = QuakeSet(root="private_set", split="test")```.
+
+You can iterate through the dataset and the IDs in the following way:
+```python
+predictions = []
+for metadata, sample in zip(ds.data, ds):
+  out = model(sample)
+  predictions.append({"key": metadata["key"], ...})
+```
+
+NOTE: the labels and magnitudes are only placeholders in this case. They are not the ground truth.
